@@ -1,3 +1,5 @@
+;set hotkeys used
+;i've bound my macro key on my blackwidow v2 to f17 to f21
 F17::switchToFirefox()
 F18::switchToSteam()
 F19::switchToDiscord()
@@ -30,9 +32,11 @@ else
 	;the below code should fix that.
 	WinGet, hWnd, ID, ahk_class vguiPopupWindow
 	DllCall("SetForegroundWindow", UInt, hWnd) 
-	WinGetTitle, Title, A
+	;move to location on second display
+	;used becuase windows likes to move things around when locking/sleeping
+	;;WinGetTitle, Title, A
 	;;Sleep, 50
-	WinMove, %Title%, , 1920, -420, 1080, 600
+	;;WinMove, %Title%, , 1920, -420, 1080, 600
 	}
 }
 
@@ -48,9 +52,10 @@ else
 	;the below code should fix that.
 	WinGet, hWnd, ID, ahk_exe Discord.exe
 	DllCall("SetForegroundWindow", UInt, hWnd) 
-	WinGetTitle, Title, A
+	;move window
+	;;WinGetTitle, Title, A
 	;;Sleep, 50
-	WinMove, %Title%, , 1920, 180, 1080, 1320
+	;;WinMove, %Title%, , 1920, 180, 1080, 1320
 	}
 }
 
@@ -66,8 +71,9 @@ else
 	;the below code should fix that.
 	WinGet, hWnd, ID, ahk_exe Spotify.exe
 	DllCall("SetForegroundWindow", UInt, hWnd)
-	WinGetTitle, Title, A
-	Sleep, 50
-	WinMove, %Title%, , 30, 30, 1500, 800
+	;move window
+	;;WinGetTitle, Title, A
+	;;Sleep, 50
+	;;WinMove, %Title%, , 30, 30, 1500, 800
 	}
 }
